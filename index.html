@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191c34">
+  <title>ResearchFlow | 像素研究所</title>
+  <!-- 單一 index.html 版本會把 style.css 和 script.js 直接嵌入此檔 -->
+  <style>
+:root{--bg:#171a30;--panel:#272b49;--panel2:#323657;--line:#73759a;--ink:#f9f3df;--muted:#b6b9d0;--mint:#8ce7bd;--pink:#fa97b8;--gold:#ffdb83;--blue:#97b9ff;--shadow:#0c0e20;--danger:#ff879b;color-scheme:dark}
+:root.light{--bg:#e9e0d0;--panel:#fff8e7;--panel2:#ede2d0;--line:#706b83;--ink:#292843;--muted:#666178;--mint:#128b68;--pink:#b83669;--gold:#ad740e;--blue:#4864b7;--shadow:#ac9e9d;--danger:#bd294c;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Courier New",ui-monospace,monospace;line-height:1.6}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px dashed var(--gold);outline-offset:3px}.stars{position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(var(--blue) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(#000,transparent 80%)}.app-shell{position:relative;max-width:1320px;padding:26px 24px 42px;margin:auto}.pixel-panel{background:var(--panel);border:3px solid var(--line);border-radius:0;box-shadow:6px 6px 0 var(--shadow)}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16px 22px}.brand{display:flex;gap:15px;align-items:center}.brand-icon{display:grid;place-items:center;flex:0 0 55px;height:55px;background:var(--mint);color:var(--bg);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--shadow);font-size:34px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--mint);font-weight:bold}.brand h1{font-size:27px;letter-spacing:2px;margin:-3px 0}.brand h1 span{color:var(--mint)}.brand p{margin:0;font-size:12px;color:var(--muted)}.top-actions{display:flex;align-items:center;gap:15px}.save-tag{font-size:12px;color:var(--mint)}.pixel-button{border:2px solid var(--ink);border-radius:0;padding:10px 14px;box-shadow:4px 4px 0 var(--shadow);font-weight:900;font-size:13px;transition:transform .1s,box-shadow .1s}.pixel-button:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--shadow)}.pixel-button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--shadow)}.primary{background:var(--mint);color:#182b2d}.secondary{background:var(--panel2);color:var(--ink)}.danger{background:var(--panel2);color:var(--danger);border-color:var(--danger)}.wide{width:100%;margin-top:13px}.hero{display:grid;grid-template-columns:1.5fr 1fr;min-height:275px;overflow:hidden;margin-top:24px;padding:25px 38px;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(255,255,255,.025) 28px),var(--panel)}.chip{display:inline-block;padding:5px 12px;background:var(--pink);color:#322438;font-size:11px;font-weight:bold;box-shadow:3px 3px 0 var(--shadow)}.hero h2{font-size:clamp(25px,3.1vw,42px);line-height:1.4;letter-spacing:2px;margin:13px 0 5px}.hero h2 em{font-style:normal;color:var(--mint)}.hero p{font-size:13px;color:var(--muted);margin:0 0 19px}.hero-art{min-height:200px;position:relative;overflow:hidden}.pixel-moon{position:absolute;top:12px;right:65px;width:95px;height:95px;background:var(--gold);box-shadow:12px 0 0 var(--panel),0 0 0 6px rgba(255,219,131,.12)}.pixel-character{position:absolute;bottom:38px;left:43%;width:80px;height:150px;image-rendering:pixelated;filter:drop-shadow(7px 7px 0 rgba(0,0,0,.3))}.pixel-character i{display:block;position:absolute}.hair{left:17px;top:8px;background:#372644;width:49px;height:42px;box-shadow:-9px 11px #372644,9px 11px #372644}.face{left:23px;top:25px;width:40px;height:35px;background:#efb18d;box-shadow:inset 10px -9px #df917f}.face:after{content:"";position:absolute;top:14px;left:10px;width:5px;height:5px;background:#2e243d;box-shadow:18px 0 #2e243d}.body{left:15px;top:66px;width:56px;height:54px;background:#7ee3c1;box-shadow:inset 0 -12px #42968c,-11px 12px #7ee3c1,11px 12px #7ee3c1}.legs{left:21px;top:120px;width:17px;height:27px;background:#546ba9;box-shadow:28px 0 #546ba9,0 8px #25243a,28px 8px #25243a}.ground{position:absolute;bottom:27px;left:15%;right:8%;height:9px;background:var(--mint);box-shadow:0 9px 0 #3e7a75}.art-caption{position:absolute;right:6%;bottom:3px;color:var(--gold);font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:24px 0}.stat{padding:17px 20px;min-height:138px;display:flex;flex-direction:column}.stat>span{font-size:11px;color:var(--muted);letter-spacing:1px}.stat strong{font-size:39px;line-height:1.25;color:var(--mint);letter-spacing:1px}.stat:nth-child(2) strong{color:var(--gold)}.stat:nth-child(3) strong{color:var(--pink)}.stat small{font-size:11px;color:var(--muted)}.pixel-progress{height:14px;width:100%;border:2px solid var(--ink);margin:8px 0 7px;background:var(--panel2)}.pixel-progress>div{height:100%;background:repeating-linear-gradient(90deg,var(--mint) 0 12px,transparent 12px 14px);width:0;transition:width .25s}.main-grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(270px,1fr);gap:22px}.quest-section{padding:22px;min-width:0}.section-heading,.side-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.section-heading h2,.side-heading h2{font-size:21px;margin:2px 0 0}.filters{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:10px;margin:20px 0}.filters label,.task-dialog label{font-size:12px;color:var(--muted);font-weight:bold;display:flex;flex-direction:column;gap:6px}input,select,textarea{width:100%;min-width:0;padding:10px 9px;border:2px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink)}textarea{resize:vertical}.task-list{display:flex;flex-direction:column;gap:13px}.task{border:2px solid var(--line);padding:15px;background:var(--panel2);position:relative}.task.done{opacity:.74}.task-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.task-title{font-size:15px;font-weight:bold;overflow-wrap:anywhere;margin:0 0 7px}.task.done .task-title{text-decoration:line-through}.task-meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px}.tag{font-size:11px;padding:2px 7px;border:1px solid var(--line);color:var(--muted)}.tag.high{color:var(--pink);border-color:var(--pink)}.tag.medium{color:var(--gold);border-color:var(--gold)}.tag.low{color:var(--mint);border-color:var(--mint)}.task-note{font-size:12px;color:var(--muted);margin:4px 0 10px;white-space:pre-wrap;overflow-wrap:anywhere}.task-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.score{font-size:12px;color:var(--gold)}.task-buttons{display:flex;flex-wrap:wrap;gap:7px}.mini-button{background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:5px 8px;font-size:11px;font-weight:bold}.mini-button:hover{background:var(--bg)}.mini-button.delete{color:var(--danger)}.overdue{color:var(--danger)!important}.list-footer{font-size:12px;color:var(--muted);margin:18px 0 0}.empty{text-align:center;border:2px dashed var(--line);padding:45px 15px;color:var(--muted)}.empty strong{display:block;font-size:23px;color:var(--mint)}.sidebar{display:flex;flex-direction:column;gap:22px}.side-panel{padding:21px}.side-heading{display:block}.category-chart{margin-top:22px}.chart-row{margin:0 0 19px}.chart-name{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:7px}.chart-track{border:2px solid var(--line);height:16px;background:var(--bg)}.chart-fill{height:100%;background:repeating-linear-gradient(90deg,var(--mint) 0 13px,transparent 13px 15px)}.chart-row:nth-child(2) .chart-fill{background:repeating-linear-gradient(90deg,var(--pink) 0 13px,transparent 13px 15px)}.chart-row:nth-child(3) .chart-fill{background:repeating-linear-gradient(90deg,var(--gold) 0 13px,transparent 13px 15px)}.chart-row:nth-child(4) .chart-fill{background:repeating-linear-gradient(90deg,var(--blue) 0 13px,transparent 13px 15px)}.help-list{font-size:13px;line-height:1.9;padding-left:24px;color:var(--muted)}.help-list li::marker{color:var(--mint);font-weight:bold}.hint{padding:12px;border:2px dashed var(--line);font-size:12px;color:var(--gold);margin:13px 0}footer{text-align:center;font-size:11px;color:var(--muted);padding:32px 0 0}.task-dialog{width:min(520px,calc(100% - 26px));max-height:90vh;overflow:auto;color:var(--ink);padding:20px 25px;margin:auto}.task-dialog::backdrop{background:rgba(8,10,24,.84)}.task-dialog form{display:flex;flex-direction:column;gap:14px}.dialog-heading{display:flex;justify-content:space-between;align-items:center}.dialog-heading h2{margin:0;font-size:21px}.icon-button{background:var(--pink);color:#2d2037;border:2px solid var(--ink);font-weight:bold;font-size:23px;width:37px;height:37px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.required{color:var(--pink)}.dialog-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:10px}
+@media(max-width:1020px){.main-grid{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}.filters{grid-template-columns:repeat(2,1fr)}}@media(max-width:690px){.app-shell{padding:12px 11px 35px}.topbar{padding:12px;flex-wrap:wrap}.brand-icon{height:45px;flex-basis:45px;font-size:28px}.brand h1{font-size:19px}.brand p{font-size:10px}.top-actions{width:100%;justify-content:space-between}.hero{grid-template-columns:1fr;padding:20px}.hero-art{min-height:165px}.pixel-character{transform:scale(.8);transform-origin:bottom}.stats{grid-template-columns:repeat(2,1fr);gap:11px}.stat{padding:12px;min-height:122px}.stat strong{font-size:31px}.quest-section,.side-panel{padding:15px}.sidebar{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr;gap:8px}.section-heading h2{font-size:18px}.form-row{grid-template-columns:1fr}.task-dialog{padding:15px}.dialog-actions{flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar pixel-panel">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div><span class="eyebrow">8-BIT PRODUCTIVITY QUEST</span><h1>RESEARCH<span>FLOW</span></h1><p>研究生的像素冒險工作台</p></div></div>
+      <div class="top-actions"><span class="save-tag" id="saveStatus" role="status">● 已在本機儲存</span><button id="themeBtn" class="pixel-button secondary" type="button">☀ 切換配色</button></div>
+    </header>
+
+    <section class="hero pixel-panel" aria-label="本週工作總覽"><div><span class="chip">QUEST BOARD / 任務看板</span><h2>今天也向畢業<br><em>前進一格！</em></h2><p>把論文、課程和研究計畫，變成能逐一破關的任務。</p><button id="addTopBtn" class="pixel-button primary" type="button">＋ 新增任務</button></div><div class="hero-art" aria-hidden="true"><div class="pixel-moon"></div><div class="pixel-character"><i class="hair"></i><i class="face"></i><i class="body"></i><i class="legs"></i></div><div class="ground"></div><span class="art-caption">LV.01 RESEARCHER</span></div></section>
+
+    <section class="stats" aria-label="任務統計"><div class="stat pixel-panel"><span>ALL QUESTS</span><strong id="totalCount">0</strong><small>全部任務</small></div><div class="stat pixel-panel"><span>CLEARED</span><strong id="doneCount">0</strong><small>已完成</small></div><div class="stat pixel-panel"><span>TIME ALERT</span><strong id="urgentCount">0</strong><small>3 天內到期或逾期</small></div><div class="stat pixel-panel"><span>EXP BAR</span><strong id="progressText">0%</strong><div class="pixel-progress" role="progressbar" aria-label="任務完成率" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><div id="progressFill"></div></div><small>整體完成率</small></div></section>
+
+    <main class="main-grid"><section class="quest-section pixel-panel" aria-label="工作任務清單"><div class="section-heading"><div><span class="eyebrow">MISSION CONTROL</span><h2>我的任務清單</h2></div><button id="addBtn" class="pixel-button primary" type="button">＋ 新增</button></div><div class="filters"><label>搜尋任務<input id="searchInput" type="search" placeholder="搜尋任務名稱／備註…"></label><label>任務類別<select id="categoryFilter"><option value="all">全部類別</option><option value="論文研究">論文研究</option><option value="課程作業">課程作業</option><option value="研究計畫">研究計畫</option><option value="其他">其他</option></select></label><label>任務狀態<select id="statusFilter"><option value="all">全部狀態</option><option value="todo">待處理</option><option value="doing">進行中</option><option value="done">已完成</option></select></label><label>排序方式<select id="sortFilter"><option value="score">智慧優先</option><option value="due">截止日最近</option><option value="created">最新建立</option></select></label></div><div id="taskList" class="task-list" aria-live="polite"></div><p id="listCount" class="list-footer"></p></section>
+
+    <aside class="sidebar"><section class="pixel-panel side-panel"><div class="side-heading"><span class="eyebrow">ANALYTICS</span><h2>任務類別分布</h2></div><div id="categoryChart" class="category-chart"></div></section><section class="pixel-panel side-panel"><div class="side-heading"><span class="eyebrow">HOW TO PLAY</span><h2>冒險指南</h2></div><ol class="help-list"><li>建立任務，填寫期限與重要程度。</li><li>查看系統推薦的優先處理順序。</li><li>切換狀態，讓進度條持續升級。</li></ol><div class="hint">★ 優先分數由重要程度、期限及工時計算，並非 AI 預測。</div><button id="demoBtn" class="pixel-button secondary wide" type="button">載入範例任務</button><button id="clearBtn" class="pixel-button danger wide" type="button">清空全部任務</button></section></aside></main>
+    <footer>RESEARCHFLOW © 2026 · PIXEL QUEST EDITION · 所有資料僅儲存在本機瀏覽器</footer>
+  </div>
+
+  <dialog id="taskDialog" class="task-dialog pixel-panel"><form id="taskForm"><div class="dialog-heading"><h2 id="dialogTitle">新增冒險任務</h2><button type="button" id="closeDialog" class="icon-button" aria-label="關閉視窗">×</button></div><input type="hidden" id="taskId"><label>任務名稱 <span class="required">*</span><input id="taskTitle" maxlength="70" required placeholder="例如：完成論文第三章"></label><div class="form-row"><label>任務類別<select id="taskCategory"><option>論文研究</option><option>課程作業</option><option>研究計畫</option><option>其他</option></select></label><label>重要程度<select id="taskPriority"><option value="high">高</option><option value="medium" selected>中</option><option value="low">低</option></select></label></div><div class="form-row"><label>截止日期 <span class="required">*</span><input type="date" id="taskDue" required></label><label>預估工時（小時）<input type="number" id="taskHours" min="0.5" max="999" step="0.5" value="2" required></label></div><label>工作狀態<select id="taskStatus"><option value="todo">待處理</option><option value="doing">進行中</option><option value="done">已完成</option></select></label><label>任務備註<textarea id="taskNote" rows="3" maxlength="400" placeholder="補充工作的細節或目標…"></textarea></label><div class="dialog-actions"><button type="button" id="cancelDialog" class="pixel-button secondary">取消</button><button type="submit" class="pixel-button primary">儲存任務 ✓</button></div></form></dialog>
+  <script>
+(() => {
+  'use strict';
+  const KEY = 'researchflow-pixel-tasks-v1';
+  const THEME_KEY = 'researchflow-pixel-theme';
+  const categories = ['論文研究', '課程作業', '研究計畫', '其他'];
+  const priorityNames = { high: '高', medium: '中', low: '低' };
+  const statusNames = { todo: '待處理', doing: '進行中', done: '已完成' };
+  const $ = id => document.getElementById(id);
+  const today = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  };
+  const daysFromToday = iso => {
+    const [y, m, d] = iso.split('-').map(Number);
+    const target = Date.UTC(y, m - 1, d);
+    const [cy, cm, cd] = today().split('-').map(Number);
+    return Math.round((target - Date.UTC(cy, cm - 1, cd)) / 86400000);
+  };
+  const datePlus = days => {
+    const [y, m, d] = today().split('-').map(Number);
+    return new Date(Date.UTC(y, m - 1, d + days)).toISOString().slice(0, 10);
+  };
+  function sampleTasks() {
+    return [
+      { id: crypto.randomUUID(), title: '完成論文實驗結果分析', category: '論文研究', priority: 'high', due: datePlus(2), hours: 6, status: 'doing', note: '整理圖表並確認實驗數據', created: Date.now() - 4000 },
+      { id: crypto.randomUUID(), title: '研究計畫期中進度報告', category: '研究計畫', priority: 'high', due: datePlus(4), hours: 4, status: 'todo', note: '彙整目前完成項目', created: Date.now() - 3000 },
+      { id: crypto.randomUUID(), title: '準備通訊系統課程簡報', category: '課程作業', priority: 'medium', due: datePlus(7), hours: 3, status: 'todo', note: '', created: Date.now() - 2000 },
+      { id: crypto.randomUUID(), title: '閱讀本週研究論文', category: '論文研究', priority: 'low', due: datePlus(10), hours: 2, status: 'done', note: '記錄重點與未來方向', created: Date.now() - 1000 }
+    ];
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw !== null) return Array.isArray(JSON.parse(raw)) ? JSON.parse(raw) : [];
+    } catch (err) { console.warn('任務資料無法讀取：', err); }
+    return sampleTasks();
+  }
+  let tasks = load();
+  let lastFocus = null;
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(tasks)); $('saveStatus').textContent = '● 已在本機儲存'; }
+    catch (err) { $('saveStatus').textContent = '⚠ 儲存失敗，請確認瀏覽器設定'; console.error(err); }
+  }
+  function score(t) {
+    if (t.status === 'done') return -1;
+    const priority = { high: 40, medium: 25, low: 10 }[t.priority] || 10;
+    const left = daysFromToday(t.due);
+    const urgency = left < 0 ? 45 : left <= 1 ? 35 : left <= 3 ? 28 : left <= 7 ? 18 : left <= 14 ? 8 : 0;
+    const duration = t.hours <= 2 ? 5 : t.hours <= 4 ? 3 : 0;
+    return priority + urgency + duration;
+  }
+  function create(tag, className, content) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (content !== undefined) element.textContent = content;
+    return element;
+  }
+  function tag(text, kind = '') { return create('span', `tag ${kind}`.trim(), text); }
+  function button(text, className, onClick) {
+    const el = create('button', className, text);
+    el.type = 'button'; el.addEventListener('click', onClick); return el;
+  }
+  function dueLabel(t) {
+    if (t.status === 'done') return '已通關';
+    const diff = daysFromToday(t.due);
+    return diff < 0 ? `逾期 ${-diff} 天` : diff === 0 ? '今天截止' : `還有 ${diff} 天`;
+  }
+  function render() {
+    const total = tasks.length;
+    const done = tasks.filter(t => t.status === 'done').length;
+    const urgent = tasks.filter(t => t.status !== 'done' && daysFromToday(t.due) <= 3).length;
+    const progress = total ? Math.round(done / total * 100) : 0;
+    $('totalCount').textContent = String(total);
+    $('doneCount').textContent = String(done);
+    $('urgentCount').textContent = String(urgent);
+    $('progressText').textContent = `${progress}%`;
+    $('progressFill').style.width = `${progress}%`;
+    $('progressBar').setAttribute('aria-valuenow', String(progress));
+    const chart = $('categoryChart'); chart.replaceChildren();
+    for (const category of categories) {
+      const count = tasks.filter(t => t.category === category).length;
+      const row = create('div', 'chart-row');
+      const name = create('div', 'chart-name');
+      name.append(create('span', '', category), create('strong', '', String(count)));
+      const track = create('div', 'chart-track');
+      const fill = create('div', 'chart-fill'); fill.style.width = `${total ? count / total * 100 : 0}%`;
+      track.append(fill); row.append(name, track); chart.append(row);
+    }
+    const query = $('searchInput').value.trim().toLocaleLowerCase();
+    const category = $('categoryFilter').value, status = $('statusFilter').value, sortBy = $('sortFilter').value;
+    const filtered = tasks.filter(t => (category === 'all' || t.category === category) && (status === 'all' || t.status === status) && (!query || `${t.title} ${t.note}`.toLocaleLowerCase().includes(query)));
+    filtered.sort((a, b) => {
+      if (sortBy === 'due') return a.due.localeCompare(b.due) || score(b) - score(a);
+      if (sortBy === 'created') return b.created - a.created;
+      return (a.status === 'done') - (b.status === 'done') || score(b) - score(a) || a.due.localeCompare(b.due);
+    });
+    const list = $('taskList'); list.replaceChildren();
+    if (!filtered.length) {
+      const empty = create('div', 'empty');
+      empty.append(create('strong', '', 'NO QUEST FOUND'), create('p', '', '沒有符合條件的任務，試著新增或調整篩選。'));
+      list.append(empty);
+    }
+    for (const task of filtered) {
+      const item = create('article', `task ${task.status === 'done' ? 'done' : ''}`);
+      const top = create('div', 'task-top'), main = create('div');
+      main.append(create('h3', 'task-title', task.title));
+      const meta = create('div', 'task-meta');
+      const diff = daysFromToday(task.due);
+      meta.append(tag(task.category), tag(`★ ${priorityNames[task.priority]}重要`, task.priority), tag(`◷ ${task.hours}h`), tag(`${task.due} · ${dueLabel(task)}`, task.status !== 'done' && diff <= 3 ? 'high' : ''));
+      main.append(meta); top.append(main); item.append(top);
+      if (task.note) item.append(create('p', 'task-note', task.note));
+      const bottom = create('div', 'task-bottom');
+      bottom.append(create('span', 'score', task.status === 'done' ? '✓ QUEST CLEARED' : `PRIORITY SCORE: ${score(task)}`));
+      const actions = create('div', 'task-buttons');
+      actions.append(button(`狀態：${statusNames[task.status]} ↻`, 'mini-button', () => { task.status = {todo:'doing',doing:'done',done:'todo'}[task.status]; persist(); render(); }));
+      actions.append(button('編輯', 'mini-button', () => openDialog(task)));
+      actions.append(button('刪除', 'mini-button delete', () => { if (confirm(`確定刪除「${task.title}」？`)) { tasks = tasks.filter(t => t.id !== task.id); persist(); render(); } }));
+      bottom.append(actions); item.append(bottom); list.append(item);
+    }
+    $('listCount').textContent = `顯示 ${filtered.length} 筆任務／共 ${total} 筆 · 點擊狀態按鈕可依序切換`;
+  }
+  function openDialog(task = null) {
+    lastFocus = document.activeElement;
+    $('taskForm').reset(); $('taskId').value = task?.id || '';
+    $('dialogTitle').textContent = task ? '編輯冒險任務' : '新增冒險任務';
+    $('taskTitle').value = task?.title || '';
+    $('taskCategory').value = task?.category || '論文研究';
+    $('taskPriority').value = task?.priority || 'medium';
+    $('taskDue').value = task?.due || today();
+    $('taskHours').value = task?.hours || 2;
+    $('taskStatus').value = task?.status || 'todo';
+    $('taskNote').value = task?.note || '';
+    $('taskDialog').showModal(); $('taskTitle').focus();
+  }
+  function closeDialog() { $('taskDialog').close(); lastFocus?.focus?.(); }
+  $('taskForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const title = $('taskTitle').value.trim();
+    const hours = Number($('taskHours').value);
+    const due = $('taskDue').value;
+    if (!title || !due || !Number.isFinite(hours) || hours < 0.5 || hours > 999) { alert('請檢查任務名稱、日期與工時（0.5 至 999 小時）。'); return; }
+    const id = $('taskId').value;
+    const prior = tasks.find(t => t.id === id);
+    const item = { id: prior?.id || crypto.randomUUID(), title, category: $('taskCategory').value, priority: $('taskPriority').value, due, hours, status: $('taskStatus').value, note: $('taskNote').value.trim(), created: prior?.created || Date.now() };
+    if (prior) tasks = tasks.map(t => t.id === prior.id ? item : t); else tasks.push(item);
+    persist(); render(); closeDialog();
+  });
+  $('addBtn').addEventListener('click', () => openDialog());
+  $('addTopBtn').addEventListener('click', () => openDialog());
+  $('closeDialog').addEventListener('click', closeDialog);
+  $('cancelDialog').addEventListener('click', closeDialog);
+  $('taskDialog').addEventListener('click', e => { if (e.target === $('taskDialog')) closeDialog(); });
+  for (const id of ['searchInput', 'categoryFilter', 'statusFilter', 'sortFilter']) $(id).addEventListener(id === 'searchInput' ? 'input' : 'change', render);
+  $('demoBtn').addEventListener('click', () => {
+    if (tasks.length && !confirm('載入範例會取代目前所有任務，確定繼續？')) return;
+    tasks = sampleTasks(); persist(); render();
+  });
+  $('clearBtn').addEventListener('click', () => {
+    if (!tasks.length) return;
+    if (confirm('確定清空所有任務？此動作無法復原。')) { tasks = []; persist(); render(); }
+  });
+  const storedTheme = localStorage.getItem(THEME_KEY);
+  if (storedTheme === 'light') document.documentElement.classList.add('light');
+  $('themeBtn').addEventListener('click', () => {
+    document.documentElement.classList.toggle('light');
+    try { localStorage.setItem(THEME_KEY, document.documentElement.classList.contains('light') ? 'light' : 'dark'); } catch { /* 不影響主功能 */ }
+  });
+  persist(); render();
+})();
+
+  </script>
+</body>
+</html>
